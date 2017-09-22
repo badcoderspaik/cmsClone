@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Menu.php</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>Menu.php</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-meta">&lt;?php</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Класс меню</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Menu</span>
+</span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Файл html-шаблона статьи</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">protected</span> $template;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Конструктор</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">($template)</span>
+    </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Прочитать файл в переменную</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">$this</span>-&gt;template = file_get_contents($template);
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Читает и возвращает преобразованный файл шаблона меню.
+Функции передается предварительно полученный программой  результирующий набор mysqli_result,
+полученный из запроса в базу данных</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">readTemplate</span><span class="hljs-params">($mysqli_object)</span>
+    </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Переменная, которая будет возвращена методом</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $menu = <span class="hljs-string">""</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Массив меток-заполнителей в html-шаблоне, которые будут заменены на результаты,
+полученные из базы данных</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $needle = <span class="hljs-keyword">array</span>(<span class="hljs-string">"[link]"</span>, <span class="hljs-string">"[href]"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Объект</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        $db_object = $mysqli_object-&gt;fetch_object();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Вырезать из шаблона часть между метками [while] (html элемент списка с ссылкой) и результат поместить в массив $items
+$items[1] будет содержать вырезанную часть, которая и будет обрабатыватьбя в цикле</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        preg_match(<span class="hljs-string">"/\[while\](.*?)\[while\]/s"</span>, <span class="hljs-keyword">$this</span>-&gt;template, $items);
+
+        <span class="hljs-keyword">if</span> ($db_object != <span class="hljs-string">""</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Если объект не пустой -
+переместить указатель результата в начало</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            $mysqli_object-&gt;data_seek(<span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Запускать цикл, пока присутсвует очередная строка результата</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">while</span> ($db_object = $mysqli_object-&gt;fetch_object()) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Присвоить переменной ссылку на файл шаблона, т.к. непосредственное обращение к $this-&gt;template в цикле
+в каждом проходе цикла осуществляет новое чтение файла шаблона, что сказывается на быстродействии</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                $temp_template = $items[<span class="hljs-number">1</span>];</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Если поле href в базе данных пустое, то внести в переменную $href значение поля category_id из таблицы menu</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">if</span> ($db_object-&gt;href == <span class="hljs-string">""</span>) $href = <span class="hljs-string">"?category="</span> . $db_object-&gt;category_id;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Иначе в переменную $href внести значение поля href из таблицы меню</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="hljs-keyword">else</span> $href = $db_object-&gt;href;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Обновляющийся при каждом проходе цикла массив значений из базы данных, значения которого будут заменять
+метки-заполнители (массив $needle) полученного файла html-шаблона</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                $replace = <span class="hljs-keyword">array</span>($db_object-&gt;name, $href);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>заменить массив меток-заполнителей на массив значений базы данных в файле шаблона</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                $temp_template = str_replace($needle, $replace, $temp_template);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>Результаты распарсенного с замененными значениями шаблона на каждом проходе цикла конкатенируются в этой переменной</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                $menu .= <span class="hljs-string">"$temp_template"</span>;
+            }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>Вместо [while]…[while] из файла шаблона вклеить сгенерированный код из $menu</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            $menu = preg_replace(<span class="hljs-string">"/\[while\](.*?)\[while\]/s"</span>, $menu, <span class="hljs-keyword">$this</span>-&gt;template);
+        }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>Если $db_object пуст</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">else</span> $menu = <span class="hljs-string">""</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>вернуть строку (можно сказать, что возвращается html-разметка) с замененными значениями</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> $menu;
+    }
+
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "codersdream",
+  "version": "1.0.0",
+  "description": "CMS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Timofeev",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-docco": "0.0.4"
+  }
+}

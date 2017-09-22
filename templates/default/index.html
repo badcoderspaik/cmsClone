@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?=$title?></title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="js/plugins/jquery.toggleMenu.js"></script>
+  <script src="js/main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:700i&amp;subset=cyrillic" rel="stylesheet"/>
+  <link rel="stylesheet" href="templates/<?=$template?>/css/style.css"/>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+</head>
+<body>
+
+<!--ОБЕРТКА-->
+<div class="outer">
+  <!--ШАПКА-->
+  <div class="header">
+    <div class="inner-header">
+      <a class="left" href="../codersdream/index.php">
+        <img src="templates/<?=$template?>/res/logo.png" alt="Лого" title="На главную"/>
+        <span class="small-logo">библиотека кодера</span>
+      </a>
+
+      <div class="gamburger right">
+        <div class="hr"></div>
+        <div class="hr"></div>
+        <div class="hr"></div>
+      </div>
+
+      <div class="header-block"></div>
+      <div class="logo2">
+        <img src="templates/<?=$template?>/res/logo2.png" alt="Книги по программированию в высоком качестве"
+             title="Книги в электронном качестве"/>
+      </div>
+    </div>
+  </div>
+  <!--ШАПКА-->
+  <!--ВНУТРЕННЯЯ ОБЕРТКА-->
+  <div class="wrapper">
+    <!--ВНУТРЕННЯЯ ОБЕРТКА-->
+    <!--ПРАВЫЙ САЙДБАР-->
+    <div class="right sidebar">
+      <!--МЕНЮ-->
+      <?=$menu?>
+      <!--МЕНЮ-->
+    </div>
+    <!--ПРАВЫЙ САЙДБАР-->
+    <!--КОНТЕНТ-->
+    <div class="content">
+      <!--БЛОК СТАТЬИ-->
+      <?=$content?>
+      <!--БЛОК СТАТЬИ-->
+    </div>
+    <!--КОНТЕНТ-->
+  </div>
+  <!--ФУТЕР-->
+  <div class="footer">
+    Электронная библиотека Knigomania.org позволяет скачать книги бесплатно на максимальной скорости. Материалы, что
+    представлены на сайте, берутся из открытых источников, поэтому ни администрация, ни хостинг-провайдер не несут
+    никакой ответственности за их размещение. Если вы являетесь правообладателем и не хотите видеть на сайте
+    определенную книгу, просим связаться с нами через форму Обратной связи и мы незамедлительно удалим её.
+    Copyright Knigomania © 2017
+  </div>
+  <!--ФУТЕР-->
+</div>
+<!--ОБЕРТКА-->
+</body>
+</html>
