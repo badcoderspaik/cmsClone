@@ -6,12 +6,15 @@ if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";
 }
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
-    $result = $connector->select("SELECT image from books WHERE id = '$id'", false);
-    $image = $result->fetch_object();
-    header("Content-type: image/*");
-    echo"$image->image";
+    if ($id > 0) {
+        $result = $connector->select("SELECT image from books WHERE id = '$id'", false);
+        $image = $result->fetch_object();
+        header("Content-type: image/*");
+        echo "$image->image";
+    }
+
 }
 
 //while($image = $result->fetch_object()){
