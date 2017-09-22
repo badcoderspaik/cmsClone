@@ -1,10 +1,10 @@
 <?php
-
+require_once ("db_connect.php");
 require_once("classes/php/Article.php");//подключение класса статьи
 require_once("classes/php/Full_Article.php");//подключение класса полной статьи
 require_once("classes/php/DbConnector.php");// подключение класса работы с базой данных
 //создать объект класса работы с базой данных
-$connector = new DbConnector("localhost", "u996357382_learn", "spaik87055091802", "u996357382_learn");
+$connector = new DbConnector("localhost:3306", $login, $password, $db_name);
 if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";
 }

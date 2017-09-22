@@ -1,8 +1,9 @@
 <?php
 //модуль меню
+require_once ("db_connect.php");
 require_once("classes/php/Menu.php");//подключить класс меню
 require_once("classes/php/DbConnector.php");//подключить класс работы с базой данных
-$menu_connector = new DbConnector("localhost", "u996357382_learn", "spaik87055091802", "u996357382_learn");
+$menu_connector = new DbConnector("localhost:3306", $login, $password, $db_name);
 if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";
 }
