@@ -36,7 +36,7 @@ class Article
                 $cutted_text = explode("[end]", $db_object->text);
                 //Обновляющийся при каждом проходе цикла массив значений из базы данных, значения которого будут заменять
                 //метки-заполнители (массив $needle) полученного файла html-шаблона
-                $replace = array($db_object->id, $db_object->cover_url, $db_object->title, $db_object->author, $db_object->year, $cutted_text[0]);
+                $replace = array($db_object->id, "../modules/get_image.php?id=".$db_object->id, $db_object->title, $db_object->author, $db_object->year, $cutted_text[0]);
                 //Заменить массив меток-заполнителей на массив значений базы данных в файле шаблона
                 $cont = str_replace($needle, $replace, $cont);
                 //Результаты распарсенного с замененными значениями шаблона на каждом проходе цикла конкатенируются в этой переменной
