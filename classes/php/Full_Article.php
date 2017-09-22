@@ -25,7 +25,7 @@ class Full_Article extends Article
             $text = str_replace("[end]", "", $db_object->text);
             //Обновляющийся при каждом проходе цикла массив значений из базы данных, значения которого будут заменять
             //метки-заполнители (массив $needle) полученного файла html-шаблона
-            $replace = array($db_object->id, "../modules/get_image.php?id=".$db_object->id, $db_object->title, $db_object->author, $db_object->year, $text);
+            $replace = array($db_object->id, $db_object->id, $db_object->title, $db_object->author, $db_object->year, $text);
             //Заменить массив меток-заполнителей на массив значений базы данных в файле шаблона
             $this->template = str_replace($needle, $replace, $this->template);
         } else {
