@@ -1,0 +1,28 @@
+/*стиль до 700px*/
+
+/*перемещение сайдбара вверх над основным блоком контента*/
+.sidebar{
+		float: none;
+		width: 100%;
+		margin-bottom: 10px;
+}
+
+/*растягивание блока контента на ширину страницы*/
+.content{
+		width: 100%;
+}
+
+/*отображение блока-кнопки меню*/
+.menu-button{
+		display: block;
+}
+
+/*удаление верхней рамки сайдбара*/
+.sidebar-block{
+		border-top-style: none;
+}
+
+/*скрытие блока меню*/
+.sidebar-block, .sidebar-block-header{
+		display: none;
+}

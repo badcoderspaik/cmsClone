@@ -18,7 +18,7 @@ if (!$full_article) {
     //выбрать из таблицы books все записи, отсортированные в обратном порядке, и поместить в переменную
     $result = $connector->select("SELECT * from books ORDER BY id DESC", false);
     //объект статьи
-    $article = new Article("templates/default/article.html");
+    $article = new Article("templates/$template/article.html");
     //распарсить шаблон статьи и записать в переменную
     $content = $article->readTemplate($result);
 }
@@ -29,7 +29,7 @@ if ($full_article) {
     //в переменную; в переменной хранится результирующий набор mysqli_result
     $result = $connector->select("SELECT * from books WHERE id = '$full_article'", false);
     //объект полной статьи
-    $article = new Full_Article("templates/default/full_article.html");
+    $article = new Full_Article("templates/$template/full_article.html");
     //распарсить шаблон статьи и записать в переменную
     $content = $article->readTemplate($result);
 }
