@@ -54,4 +54,8 @@ class DbConnector
         return $result;
     }
 
+    public function cleanData(&$data){
+        $this->db->real_escape_string($data);
+    }
+
 }

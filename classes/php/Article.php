@@ -13,7 +13,7 @@ class Article
     //Читает и возвращает преобразованный файл шаблона статьи.
     //Функции передается предварительно полученный программой  результирующий набор mysqli_result,
     // полученный из запроса в базу данных
-    public function readTemplate($mysqli_object)
+    public function readTemplate($mysqli_object = '')
     {
         //Переменная, которая будет возвращена методом
         $content = "";

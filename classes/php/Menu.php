@@ -1,7 +1,7 @@
 <?php
 
 //Класс меню
-class Menu
+class Menu extends Article
 {
     //Файл html-шаблона статьи
     protected $template;
@@ -10,12 +10,12 @@ class Menu
     function __construct($template)
     {
         //Прочитать файл в переменную
-        $this->template = file_get_contents($template);
+        parent::__construct($template);
     }
     //Читает и возвращает преобразованный файл шаблона меню.
     //Функции передается предварительно полученный программой  результирующий набор mysqli_result,
     //полученный из запроса в базу данных
-    public function readTemplate($mysqli_object)
+    public function readTemplate($mysqli_object = '')
     {
         //Переменная, которая будет возвращена методом
         $menu = "";
