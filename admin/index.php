@@ -13,7 +13,7 @@ if($page == 'index'){
 
 if($page == 'add_content'){
     require_once ('../admin/modules/add_content_form.php');
-    $content = $add_content_form->readTemplate("../admin/templates/$template/add_content_form.html");
+    $content = $add_content_form->readTemplate($form_connector_result);
 }
 
 require_once "templates/$template/index.html";

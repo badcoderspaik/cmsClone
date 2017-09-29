@@ -3,19 +3,23 @@
   <table class="post_form">
 
     <tr>
-      <td>Название: </td> <td><input type="text" name="book_title"></td>
+      <td>Название:</td>
+      <td><input type="text" name="book_title"></td>
     </tr>
 
     <tr>
-      <td>Автор: </td> <td><input type="text" name="autor"></td>
+      <td>Автор:</td>
+      <td><input type="text" name="autor"></td>
     </tr>
 
     <tr>
-      <td>Год издания: </td> <td><input type="text" name="year"></td>
+      <td>Год издания:</td>
+      <td><input type="text" name="year"></td>
     </tr>
 
     <tr>
-      <td>Описание: </td><td><textarea name="description"></textarea></td>
+      <td>Описание:</td>
+      <td><textarea name="description"></textarea></td>
     </tr>
 
     <tr>
@@ -24,6 +28,17 @@
 
     <tr>
       <td>Загрузить книгу:<br><br><input type="file" name="book"></td>
+    </tr>
+
+    <tr>
+      <td>Выбрать категорию:</td>
+      <td>
+        <select>
+          [while]
+          <option>[item]</option>
+          [while]
+        </select>
+      </td>
     </tr>
 
     <tr>
