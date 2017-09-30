@@ -33,7 +33,7 @@ table.post_form td {
 		padding: 10px 0;
 }
 
-table.post_form input[type="text"]{
+table.post_form input[type="text"], select{
 		width: 90%;
 }
 

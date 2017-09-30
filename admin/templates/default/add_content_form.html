@@ -23,22 +23,22 @@
     </tr>
 
     <tr>
+      <td>Выбрать категорию:</td>
+      <td>
+        <select name="categories">
+          [while]
+          <option value="[category_id]">[item]</option>
+          [while]
+        </select>
+      </td>
+    </tr>
+
+    <tr>
       <td>Загрузить обложку:<br><br><input type="file" name="cover"></td>
     </tr>
 
     <tr>
       <td>Загрузить книгу:<br><br><input type="file" name="book"></td>
-    </tr>
-
-    <tr>
-      <td>Выбрать категорию:</td>
-      <td>
-        <select>
-          [while]
-          <option>[item]</option>
-          [while]
-        </select>
-      </td>
     </tr>
 
     <tr>

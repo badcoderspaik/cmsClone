@@ -10,7 +10,7 @@ class AddContentForm extends Article
     public function readTemplate($mysqli_object = '')
     {
         $content = '';
-        $needle = '[item]';
+        $needle = array('[item]', '[category_id]');
         $db_object = $mysqli_object->fetch_object();
         preg_match("/\[while\](.*?)\[while\]/s", $this->template, $items);
 
@@ -18,7 +18,7 @@ class AddContentForm extends Article
             $mysqli_object->data_seek(0);
             while ($db_object = $mysqli_object->fetch_object()){
                 $temp_template = $items[1];
-                $replace = $db_object->name;
+                $replace = array($db_object->name, $db_object->category_id);
                 $temp_template = str_replace($needle, $replace, $temp_template);
                 $content .= "$temp_template";
             }
