@@ -19,7 +19,7 @@ class Article
         $content = "";
         //Массив меток-заполнителей в html-шаблоне, которые будут заменены на результаты,
         //Полученные из базы данных
-        $needle = array("[article_id]", "[cover_url]", "[title]", "[author]", "[year]", "[text]");
+        $needle = array("[article_id]", "[cover_url]", "[title]", "[author]", "[year]", "[text]", "[book_file]");
         //Объект
         $db_object = $mysqli_object->fetch_object();
         //Если объект не пустой
@@ -36,7 +36,7 @@ class Article
                 $cutted_text = explode("[end]", $db_object->text);
                 //Обновляющийся при каждом проходе цикла массив значений из базы данных, значения которого будут заменять
                 //метки-заполнители (массив $needle) полученного файла html-шаблона
-                $replace = array($db_object->id, $db_object->id, $db_object->title, $db_object->author, $db_object->year, $cutted_text[0]);
+                $replace = array($db_object->id, $db_object->id, $db_object->title, $db_object->author, $db_object->year, $cutted_text[0], $db_object->book_file);
                 //Заменить массив меток-заполнителей на массив значений базы данных в файле шаблона
                 $cont = str_replace($needle, $replace, $cont);
                 //Результаты распарсенного с замененными значениями шаблона на каждом проходе цикла конкатенируются в этой переменной
