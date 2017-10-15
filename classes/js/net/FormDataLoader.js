@@ -3,13 +3,13 @@ APP.FormDataLoader = function (options) {
     url = options.url || "",
     type = options.type || "post",
     form_element = options.form_element,
-    formData = new FormData(form_element),
     success = options.success,
     error = options.error,
     beforeSend = options.beforeSend;
 
   form_element.on("submit", function (event) {
     event.preventDefault();
+    var formData = new FormData(form_element[0]);
     $.ajax({
       url: url,
       type: type,
