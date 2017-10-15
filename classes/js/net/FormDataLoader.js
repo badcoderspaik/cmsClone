@@ -8,13 +8,19 @@ APP.FormDataLoader = function (options) {
     error = options.error,
     beforeSend = options.beforeSend;
 
-  $.ajax({
-    url: url,
-    type: type,
-    processData: false,
-    contentType: false,
-    data: formData,
-    success: success,
-    beforeSend: beforeSend
+  form_element.on("submit", function (event) {
+    event.preventDefault();
+    $.ajax({
+      url: url,
+      type: type,
+      processData: false,
+      contentType: false,
+      data: formData,
+      success: success,
+      beforeSend: beforeSend
+    });
   });
+
 };
+
+APP.FormDataLoader.prototype = APP.Net;

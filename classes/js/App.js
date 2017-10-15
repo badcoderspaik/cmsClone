@@ -76,6 +76,10 @@ var APP = (function (app) {
     }
 
   };
+
+  app.inherit = function (child, parent) {
+    child.prototype = new parent();
+  };
   /**
    * вернуть объект APP
    */

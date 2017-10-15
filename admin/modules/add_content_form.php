@@ -27,10 +27,14 @@ $add_content_form = new AddContentForm($root."/admin/templates/$template/add_con
         $book_file_dir = $_SERVER['DOCUMENT_ROOT'].'/book_files/';
         $book_name = $form_connector->db->real_escape_string($book_loader->getFileName());
         $uploaded_filename = $book_file_dir.$book_loader->getFileName();
-//        copy($book['tmp_name'], $uploaded_filename);
         $book_loader->copy($uploaded_filename);
 
+        $book_title = $form_connector->db->real_escape_string($book_title);
+        $year = $form_connector->db->real_escape_string($year);
+        $author = $form_connector->db->real_escape_string($author);
         $cover = $form_connector->db->real_escape_string($cover);
+        $description = $form_connector->db->real_escape_string($description);
+
         $form_connector->insert("INSERT INTO `books` (`title`, `author`, `year`, `text`, `image`, `category_id`, `book_file`) VALUES (\"$book_title\", \"$author\",\"$year\", \"$description\", \"$cover\", \"$categories\", \"$book_name\")");
         echo "Данные добавлены в базу данных";
     }
