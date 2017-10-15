@@ -141,15 +141,15 @@ APP.Widget.Notification = function (options) {
     var that = this;
     if (content) this.element.text(content);
     this.element.fadeIn('slow');
-    // setTimeout(function () {
-    //   that.element.fadeOut('slow');
-    // }, duration);
     return this.element;
   };
 
   this.hide = function () {
-    this.element.fadeOut('slow');
-    return this.element;
+    var that = this;
+    setTimeout(function () {
+      that.element.fadeOut('slow');
+      return that.element;
+    }, duration);
   };
 
   this.content = function (content) {

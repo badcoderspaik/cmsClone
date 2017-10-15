@@ -1,9 +1,10 @@
 $(function () {
   var form_notification = new APP.Widget.Notification.CheckForm({
-      width: "400px",
       color: "yellow",
       fontSize: "larger",
-      boxShadow: "-5px 5px 10px gray"
+      boxShadow: "-5px 5px 10px gray",
+      duration: 1000,
+      borderRadius: "5px"
     }),
 
     form_data_loader = new APP.FormDataLoader({

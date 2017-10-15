@@ -39,6 +39,6 @@ $add_content_form = new AddContentForm($root."/admin/templates/$template/add_con
         echo "Данные добавлены в базу данных";
     }
     else {
-        echo "Вы заполнили не все поля";
+        echo "Не все поля заполнены";
     }
 
