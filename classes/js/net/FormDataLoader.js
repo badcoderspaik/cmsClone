@@ -4,7 +4,9 @@ APP.FormDataLoader = function (options) {
     type = options.type || "post",
     form_element = options.form_element,
     success = options.success,
-    error = options.error,
+    error = options.error ||function () {
+        alert("Ошибка сети");
+      };
     beforeSend = options.beforeSend;
 
   form_element.on("submit", function (event) {
@@ -17,7 +19,8 @@ APP.FormDataLoader = function (options) {
       contentType: false,
       data: formData,
       success: success,
-      beforeSend: beforeSend
+      beforeSend: beforeSend,
+      error: error
     });
   });
 

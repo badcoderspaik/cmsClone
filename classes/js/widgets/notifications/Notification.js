@@ -5,7 +5,7 @@ APP.Widget.Notification = function (options) {
   this.content = options.content || "";
   this.element.text(this.content);
 
-  var width = options.width || "300px",
+  var width = options.width || "",
     marginLeft = options.marginLeft || -(parseInt(width) / 2) + "px",
     padding = options.padding || "10px",
     position = options.position || "fixed",
@@ -51,8 +51,8 @@ APP.Widget.Notification = function (options) {
     var that = this;
     setTimeout(function () {
       that.element.fadeOut('slow');
-      return that.element;
     }, duration);
+    return that.element;
   };
 
   this.content = function (content) {

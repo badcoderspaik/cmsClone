@@ -22,7 +22,7 @@ $form_connector = new DbConnector($host, $login, $password, $db_name);
 $form_connector_result = $form_connector->select("SELECT name, category_id FROM menu", false);
 $add_content_form = new AddContentForm($root."/admin/templates/$template/add_content_form.html");
 
-    if($book_title && $author && $year && $description && $cover && $book_loader && $categories) {
+    if($book_title && $author && $year && $description && $cover && $book_loader->getSize() > 0 && $categories) {
 
         $book_file_dir = $_SERVER['DOCUMENT_ROOT'].'/book_files/';
         $book_name = $form_connector->db->real_escape_string($book_loader->getFileName());
