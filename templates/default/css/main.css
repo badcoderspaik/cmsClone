@@ -218,22 +218,18 @@ p.readmore-block {
 		border: 2px solid #9C9C9C;
 		margin: 0 10px 10px 0;
 }
-
-a.preview{
-			margin: 0 10px 10px 0;
-	}
 	
 .preview{
   margin:0 10px 10px 0;
 }
 
-a.preview img:hover{
+.preview img:hover{
 		border-color: #000;
 }
 
-/*a.preview img{*/
-		/*width: 100%;*/
-/*}*/
+.preview img{
+		width: 100%;
+}
 
 /*БЛОК СТАТЬИ*/
 
