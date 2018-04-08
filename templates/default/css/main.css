@@ -222,6 +222,10 @@ p.readmore-block {
 a.preview{
 			margin: 0 10px 10px 0;
 	}
+	
+.preview{
+  margin:0 10px 10px 0;
+}
 
 a.preview img:hover{
 		border-color: #000;
