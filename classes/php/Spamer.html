@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spamer</title>
+  <style>
+    textarea {
+      width: inherit;
+      font-size: 20px;
+    }
+
+    .wrap {
+      width: 700px;
+      margin: auto;
+    }
+
+    #out {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .menu_bar {
+      height: 59px;
+      width: 280px;
+      background-image: url("фон.jpg");
+      background-repeat: repeat-x;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="menu_bar"></div>
+  <textarea id="in" autofocus rows=10></textarea>
+  <button id="btn">Тырц</button>
+  <button id="clean">Очистить</button>
+</div>
+
+<div id="out" class="wrap"></div>
+
+<script>
+  var in_text = document.getElementById("in"),
+    out_text = document.getElementById("out"),
+    btn_clean = document.getElementById("clean"),
+    btn = document.getElementById("btn");
+
+  function replacer(str) {
+    var res = str.replace(/а/g, "a");
+    res = res.replace(/е/g, "e");
+    res = res.replace(/с/g, "c");
+    res = res.replace(/о/g, "o");
+    res = res.replace(/р/g, "p");
+    res = res.replace(/у/g, "y");
+    res = res.replace(/х/g, "x");
+    res =  res.replace(/А/g, "A");
+    res = res.replace(/Е/g, "E");
+    res = res.replace(/С/g, "C");
+    res = res.replace(/О/g, "O");
+    res = res.replace(/Р/g, "P");
+    res = res.replace(/У/g, "Y");
+    res = res.replace(/Х/g, "X");
+
+    return res;
+  };
+
+  btn.onclick = function () {
+    var val = in_text.value;
+    out_text.textContent = '';
+    out_text.textContent = replacer(val);
+    in_text.focus();
+  };
+
+  btn_clean.onclick = function () {
+    in_text.value = '';
+    out_text.innerText = '';
+    in_text.focus();
+  }
+
+</script>
+
+</body>
+</html>
