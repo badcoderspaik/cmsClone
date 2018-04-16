@@ -222,6 +222,10 @@ p.readmore-block {
 a.preview{
 			margin: 0 10px 10px 0;
 	}
+	
+.preview{
+  margin:0 10px 10px 0;
+}
 
 a.preview img:hover{
 		border-color: #000;
@@ -242,6 +246,50 @@ a.preview img:hover{
 a.widget:hover{
 		background-image: linear-gradient(to bottom, #2f73ed, #96BCFF);
 }
+
+.comment_footer{
+		color:#929292;
+}
+
+.comment-header{
+		width: 20%;
+		margin: 10px auto;
+		text-align: center;
+}
+
+table.menu, table.post_form {
+		width: 100%;
+		border: 1px solid #b0b0b0;
+		border-collapse: separate;
+		border-spacing: 5px;
+}
+
+table.menu td, table.post_form td{
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid #b0b0b0;
+		cursor: pointer;
+}
+
+table.menu td {
+		width: 100px;
+		height: 100px;
+}
+
+table.post_form td {
+		padding: 10px 0;
+}
+
+table.post_form input[type="text"], select{
+		width: 90%;
+}
+
+textarea {
+		width: 90%;
+		height: 200px;
+		resize: none;
+}
+
 /*ФУТЕР*/
 .footer {
 		padding: 30px;

@@ -58,4 +58,10 @@ class DbConnector
         $this->db->real_escape_string($data);
     }
 
+    public function count($table_name, $column_name, $value){
+        $result = $this->select("SELECT * FROM $table_name WHERE $column_name = $value", false);
+        $field_count = $result->num_rows;
+        return $field_count;
+    }
+
 }

@@ -9,3 +9,11 @@
 .header-block{
 		height: 100px;
 }
+
+.preview{
+		width: 40%;
+}
+
+.preview img{
+		width: 100%;
+}

@@ -26,3 +26,11 @@
 .sidebar-block, .sidebar-block-header{
 		display: none;
 }
+
+.preview{
+		width: 40%;
+}
+
+.preview img{
+		width: 100%;
+}

@@ -30,6 +30,15 @@ if ($full_article) {
     $article = new Full_Article("templates/$template/full_article.html");
     //распарсить шаблон статьи и записать в переменную
     $content = $article->readTemplate($result);
+    //выбрать из таблицы comments запись с идентификатором равным "$full_article" и записать
+    //в переменную; в переменной хранится результирующий набор mysqli_result
+    $comment_result = $connector->select("SELECT * from comments WHERE comment_id = '$full_article' ORDER BY `id` DESC ", false);
+    //объект коментария
+    $comment = new Comment("templates/$template/comment.html");
+    //распарсить шаблон комментария и записать в переменную
+    $comment_content = $comment->readTemplate($comment_result, $full_article);
+    //приклеить к шаблону полной статьи шаблон комментария
+    $content .= $comment_content;
 }
 
 if($_GET["category"]) $category_id = $_GET["category"];

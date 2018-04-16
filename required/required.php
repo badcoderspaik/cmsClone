@@ -8,3 +8,4 @@ require_once $root."/classes/php/Article.php";
 require_once $root."/classes/php/Full_Article.php";
 require_once $root."/classes/php/Menu.php";
 require_once $root."/classes/php/AddContentForm.php";
+require_once $root."/classes/php/Comment.php";

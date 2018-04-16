@@ -2,9 +2,9 @@
   $.fn.validate = function (options, success) {
 
     var form = this,
-    error = false;
-    this.on("submit", function (e) {
-      e.preventDefault();
+      error = false;
+    this.on("submit", function (event) {
+      event.stopPropagation();
       $.each(options, function (name, value) {
 
         var current = form.find("[name =" + name + "]");
@@ -44,6 +44,21 @@
           }
         }
 
+        if (value.maxLength != undefined) {
+          if ($.trim(current.val()).length > value.maxLength) {
+            event.preventDefault();
+            error = true;
+            if (!(current.siblings().is($(".max-message")))) {
+              current.css("outline", "1px solid red");
+              current.after($("<div class='max-message' style='color: red; font-size: smaller; margin-top: 5px;'>" + value.messages.maxLength + "</div>"));
+            }
+          } else {
+            current.css("outline", "");
+            $(".max-message", current).remove();
+            error = false;
+          }
+        }
+
         if (value.expression != undefined) {
           if (!value.expression.test($.trim(current.val()))) {
             event.preventDefault();
@@ -61,12 +76,12 @@
 
       });
       console.log(error);
-      if (success){
-        if(!error){
+      if (success) {
+        if (!error) {
           success();
         }
       }
-
+      event.preventDefault();
     });
   };
 }(jQuery));
