@@ -18,8 +18,8 @@ if ($_POST['comment_id']) $comment_id = $_POST['comment_id'];
 $connector = new DbConnector($host, $login, $password, $db_name);
 
 if ($author && $comment && $comment_id) {
-    $author = $connector->db->real_escape_string($author);
-    $comment = $connector->db->real_escape_string($comment);
+    $author = $connector->cleanData($author);
+    $comment = $connector->cleanData($comment);
     $date_day = date("d");//Определяем день
     $date_month = date("m");//Определяем месяц
     $date_year = date("Y");//Определяем год

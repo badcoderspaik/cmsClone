@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Александр
- * Date: 14.04.2018
- * Time: 0:08
+ * Класс вывода комментариев к статье, расширящюий класс Article
  */
 
 class Comment extends Article
@@ -12,13 +9,19 @@ class Comment extends Article
     {
         parent::__construct($template);
     }
-
+    /**
+     * Читает и возвращает преобразованный файл шаблона комментария.
+     * Функции передается предварительно полученный программой результирующий набор mysqli_result, полученный из запроса в базу данных
+     * и идентификатор статьи, который нужен для определения - к какой статье необходимо вывести из базы этот комментарий
+     * @param string $mysqli_object
+     * @param string $comment_id
+     * @return string
+     */
     public function readTemplate($mysqli_object = '', $comment_id)
     {
-        /**Переменная, которая будет возвращена методом.
-         *
-         * Будет содержать html-разметку с извлеченными из базы данных значениями, которые будут вставлены на место
-         * меток-заполнителей
+        /**
+         * Переменная, которая будет возвращена методом.
+         * Будет содержать html-разметку с извлеченными из базы данных значениями, которые будут вставлены на место меток-заполнителей
          * @var string
          */
         $comment = "";
@@ -27,16 +30,28 @@ class Comment extends Article
          * Объект - полученный из базы - результирующий набор
          */
         $db_object = $mysqli_object->fetch_object();
-        $dbConnector = new DbConnector("localhost", 'clien_spaik', 'spaik87055091802', 'codersdream');
-        $count = $dbConnector->count("comments", "comment_id", $comment_id);
-        $full_comment = file_get_contents("templates/default/comment_form.html");
-        $full_comment = str_replace("[article_id]", $comment_id, $full_comment);
         /**
-         * Массив меток-заполнителей в html-шаблоне, которые будут заменены на результаты, полученные из базы данных
+         * Объект коннектора к базе данных
+         */
+        $dbConnector = new DbConnector("localhost", 'clien_spaik', 'spaik87055091802', 'codersdream');
+        /**
+         * Прочитать количество записей из базы к данной статье
+         */
+        $count = $dbConnector->count("comments", "comment_id", $comment_id);
+        //массив меток-заполнителей из html-шаблона формы комментариев, которые будут заменены на соответствующие значения из базы данных
+        $needle_form = array("[article_id]", "[comment_count]");
+        //массив прочитанных из базы значений, которыми будут заменены метки-заполнители из html-шаблона
+        $needle_replace = array($comment_id, $count);
+        //прочитать html-шаблон формы комментариев
+        $full_comment = file_get_contents("templates/default/comment_form.html");
+        //и заменить в нем метки-заполнители на значения из базы данных
+        $full_comment = str_replace($needle_form, $needle_replace, $full_comment);
+        /**
+         * Массив меток-заполнителей в html-шаблоне комментариев к статье, которые будут заменены на результаты, полученные из базы данных
          * @var array
          */
         $needle = array("[text]", "[author]", "[comment_date]");
-        if($db_object != ''){
+        if($db_object != ''){//если есть комментарии к статье
             $mysqli_object->data_seek(0);
             /**
              * Запускать цикл, пока присутсвует очередная строка результата
@@ -65,13 +80,12 @@ class Comment extends Article
                  */
                 $comment .= "$cont";
             }
-            $full_comment .= "<h3 class='brown comment-header'>Комментарии ( $count )</h3>";
             $full_comment .= "$comment";
-        } else {
+        } else {//если нет комментариев
             /*
-             * если $db_object пуст
+             * вывести просто форму добавления комментария
              */
-            $full_comment .= "<h3 class='brown comment-header'>Комментарии ( $count )</h3>";
+            $full_comment = str_replace($needle, $needle_replace, $full_comment);
         }
         return $full_comment;
     }

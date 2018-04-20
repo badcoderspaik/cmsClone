@@ -252,9 +252,12 @@ a.widget:hover{
 }
 
 .comment-header{
-		width: 20%;
 		margin: 10px auto;
 		text-align: center;
+}
+
+p.comment-header{
+		display: none;
 }
 
 table.menu, table.post_form {

@@ -1,9 +1,11 @@
 (function ($) {
   $.fn.validate = function (options, success) {
 
-    var form = this,
-      error = false;
+    var form = this;
+
     this.on("submit", function (event) {
+      var error = false;
+      event.preventDefault();
       event.stopPropagation();
       $.each(options, function (name, value) {
 
@@ -19,11 +21,9 @@
               current.after($("<div class='empty-message' style='color: red; font-size: smaller; margin-top: 5px;'>" + value.messages.empty + "</div>"));
             }
           } else {
-//							if(current.siblings().is($(".empty-message"))){
             current.css("outline", "");
             $(".empty-message", current).remove();
-            error = false;
-//							}
+            //error = false;
           }
         }
 
@@ -36,15 +36,12 @@
               current.after($("<div class='min-message' style='color: red; font-size: smaller; margin-top: 5px;'>" + value.messages.minLength + "</div>"));
             }
           } else {
-//            if (current.siblings().is($(".min-message"))) {
             current.css("outline", "");
             $(".min-message", current).remove();
-            error = false;
-//            }
           }
         }
 
-        if (value.maxLength != undefined) {
+        if ((value.maxLength != undefined) && ($.trim(current.val()).length != 0)) {
           if ($.trim(current.val()).length > value.maxLength) {
             event.preventDefault();
             error = true;
@@ -55,7 +52,7 @@
           } else {
             current.css("outline", "");
             $(".max-message", current).remove();
-            error = false;
+            console.log(error);
           }
         }
 
@@ -70,10 +67,8 @@
           } else {
             current.css("outline", "");
             $(".expression-message", current).remove();
-            error = false;
           }
         }
-
       });
       console.log(error);
       if (success) {
@@ -81,7 +76,7 @@
           success();
         }
       }
-      event.preventDefault();
+
     });
   };
 }(jQuery));

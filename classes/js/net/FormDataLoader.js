@@ -7,16 +7,10 @@ APP.FormDataLoader = function (options) {
     error = options.error ||function () {
         alert("Ошибка сети");
       },
-    beforeSend = options.beforeSend,
-    author = form_element.find("input[name='author']"),
-    textarea = form_element.find("textarea[name='comment']"),
-    hidden = form_element.find("input[name='comment_id']"),
-    formData = new FormData();
-  FormData.set(author[0]);
-  FormData.set(textarea[0]);
-  FormData.set(hidden[0]);
+    beforeSend = options.beforeSend;
 
-  form_element.on("submit", function (event) {
+  this.query = function () {
+    var formData = new FormData(form_element[0]);
     $.ajax({
       url: url,
       type: type,
@@ -28,7 +22,23 @@ APP.FormDataLoader = function (options) {
       beforeSend: beforeSend,
       error: error
     });
-  });
+  };
+
+
+  /*form_element.on("submit", function (event) {
+    var formData = new FormData(form_element[0]);
+    $.ajax({
+      url: url,
+      type: type,
+      processData: false,
+      contentType: false,
+      cache: false,
+      data: formData,
+      success: success,
+      beforeSend: beforeSend,
+      error: error
+    });
+  });*/
 
 };
 

@@ -53,9 +53,12 @@ class DbConnector
         $result = $this->db->query($query);
         return $result;
     }
-
+    //Очищает данные от спецсимволов и html тегов перед записью их в базу данных
     public function cleanData(&$data){
-        $this->db->real_escape_string($data);
+        $data = strip_tags($data);//убрать html теги
+        $data = htmlspecialchars($data);//преобразовать спецсимволы в html сущности
+        $data = $this->db->real_escape_string($data);//экранировать спецсимволы, принимая во внимание кодировку соединения с базой данных
+        return $data;
     }
 
     public function count($table_name, $column_name, $value){
