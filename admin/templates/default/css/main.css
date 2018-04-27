@@ -16,9 +16,10 @@ table.menu, table.post_form {
 		border: 1px solid #b0b0b0;
 		border-collapse: separate;
 		border-spacing: 5px;
+		margin-top: 10px;
 }
 
-table.menu td, table.post_form td{
+table.menu td, table.post_form td {
 		text-align: center;
 		vertical-align: middle;
 		border: 1px solid #b0b0b0;
@@ -34,7 +35,7 @@ table.post_form td {
 		padding: 10px 0;
 }
 
-table.post_form input[type="text"], select{
+table.post_form input[type="text"], select {
 		width: 90%;
 }
 
@@ -44,17 +45,27 @@ textarea {
 		resize: none;
 }
 
-table.menu td:hover{
+table.menu td:hover {
 		background-color: #B3D8C3;
 }
 
-table.menu a{
+table.menu a {
 		display: block;
 		padding: 40px 0;
 }
 
-table.menu a:hover{
+table.menu a:hover {
 		color: #000ed1
+}
+
+form[name="admin_login_form"] {
+		width: 25%;
+		margin: auto;
+		min-width: 305px
+}
+
+form[name="admin_login_form"] input[type='text'] {
+		width: inherit;
 }
 
 /*красная полоса вокруг элемента*/
@@ -79,7 +90,7 @@ table.menu a:hover{
 /*внешняя обложка страницы*/
 .outer {
 		min-width: 320px;
-		background-image: linear-gradient(to bottom,#c6f3dc, white);
+		background-image: linear-gradient(to bottom, #c6f3dc, white);
 
 }
 
@@ -115,22 +126,22 @@ table.menu a:hover{
 		max-width: 100%;
 }
 
-.small-logo{
+.small-logo {
 		display: none;
 }
 
-.gamburger{
+.gamburger {
 		display: none;
 		width: 20%;
 }
 
-.gamburger .hr{
+.gamburger .hr {
 		height: 5px;
 		margin-bottom: 5px;
-		background-color:#fff;
+		background-color: #fff;
 }
 
-.gamburger .hr:last-child{
+.gamburger .hr:last-child {
 		margin-bottom: 0;
 }
 
@@ -145,15 +156,15 @@ table.menu a:hover{
 		float: left;
 }
 
-.blue{
+.blue {
 		color: #2267ff;
 }
 
-.brown{
+.brown {
 		color: #D0910B;
 }
 
-.text-center{
+.text-center {
 		text-align: center;
 }
 
@@ -224,6 +235,21 @@ table.menu a:hover{
 		color: #fff;
 }
 
+div.logout-link {
+		position: absolute;
+		right: 25px;
+}
+
+div.logout-link a {
+		font-family: Courier, serif;
+		font-size: 18px;
+		color: red;
+}
+
+div.logout-link a:hover {
+		text-decoration: underline;
+}
+
 /*БЛОК КОНТЕНТА*/
 .content {
 		margin-right: 26%;
@@ -254,7 +280,7 @@ p.readmore-block {
 		margin-bottom: 7px;
 }
 
-.readmore-block a{
+.readmore-block a {
 		padding: 8px;
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;
@@ -266,29 +292,30 @@ p.readmore-block {
 		margin: 0 10px 10px 0;
 }
 
-a.preview{
-			margin: 0 10px 10px 0;
-	}
+a.preview {
+		margin: 0 10px 10px 0;
+}
 
-a.preview img:hover{
+a.preview img:hover {
 		border-color: #000;
 }
 
 /*a.preview img{*/
-		/*width: 100%;*/
+/*width: 100%;*/
 /*}*/
 
 /*БЛОК СТАТЬИ*/
 
-.widget{
+.widget {
 		background-color: #2f73ed;
 		background-image: linear-gradient(to top, #2f73ed, #96BCFF);
 		color: white;
 }
 
-a.widget:hover{
+a.widget:hover {
 		background-image: linear-gradient(to bottom, #2f73ed, #96BCFF);
 }
+
 /*ФУТЕР*/
 .footer {
 		padding: 30px;

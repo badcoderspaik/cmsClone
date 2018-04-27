@@ -1,6 +1,5 @@
 <?php
 //модуль меню
-require_once "required/required.php";
 $menu_connector = new DbConnector($host, $login, $password, $db_name);
 if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";

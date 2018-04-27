@@ -1,12 +1,15 @@
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
+  browser_sync = require('browser-sync'),
+  reload = browser_sync.reload,
 
   tasks = [
     'concat'
   ],
 
   paths = {
-    root: './classes/js/**/*.js'
+    js: './classes/js/**/*.js',
+    css: './**/*.css'
   };
 
 gulp.task('concat', function () {
@@ -22,6 +25,16 @@ gulp.task('concat', function () {
     .pipe(gulp.dest('./classes/js/'));
 });
 
+gulp.task('reload', function () {
+  var path = ['./**/*.css'];
+  browser_sync.init(path, {
+    server: {
+      baseDir: './'
+    }
+  });
+});
+
 gulp.task('watch', tasks, function () {
-  gulp.watch(paths.root, ['concat']);
+  gulp.watch(paths.js, ['concat']);
+/*  gulp.watch(paths.css, ['reload']);*/
 });

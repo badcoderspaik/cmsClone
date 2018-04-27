@@ -252,9 +252,12 @@ a.widget:hover{
 }
 
 .comment-header{
-		width: 20%;
 		margin: 10px auto;
 		text-align: center;
+}
+
+p.comment-header{
+		display: none;
 }
 
 table.menu, table.post_form {
@@ -288,6 +291,15 @@ textarea {
 		width: 90%;
 		height: 200px;
 		resize: none;
+}
+
+.noscript {
+		position: fixed;
+		padding: 10px;
+		background-color: red;
+		color: #ffffff;
+		text-align: center;
+		width: 100%;
 }
 
 /*ФУТЕР*/

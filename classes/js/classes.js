@@ -102,7 +102,7 @@ APP.Widget.Notification = function (options) {
   this.content = options.content || "";
   this.element.text(this.content);
 
-  var width = options.width || "300px",
+  var width = options.width || "",
     marginLeft = options.marginLeft || -(parseInt(width) / 2) + "px",
     padding = options.padding || "10px",
     position = options.position || "fixed",
@@ -148,8 +148,8 @@ APP.Widget.Notification = function (options) {
     var that = this;
     setTimeout(function () {
       that.element.fadeOut('slow');
-      return that.element;
     }, duration);
+    return that.element;
   };
 
   this.content = function (content) {
@@ -169,28 +169,51 @@ APP.Widget.Notification.CheckForm = function (options) {
 };
 
 APP.inherit(APP.Widget.Notification.CheckForm, APP.Widget.Notification);
+APP.Net = {
+
+};
 APP.FormDataLoader = function (options) {
   var options = options || {},
     url = options.url || "",
     type = options.type || "post",
     form_element = options.form_element,
     success = options.success,
-    error = options.error,
+    error = options.error ||function () {
+        alert("Ошибка сети");
+      },
     beforeSend = options.beforeSend;
 
-  form_element.on("submit", function (event) {
-    event.preventDefault();
+  this.query = function () {
+    var formData = new FormData(form_element[0]);
+    formData.append("btn_add", "Отправить");
+    $.ajax({
+      url: url,
+      type: type,
+      processData: false,
+      contentType: false,
+      cache: false,
+      data: formData,
+      success: success,
+      beforeSend: beforeSend,
+      error: error
+    });
+  };
+
+
+  /*form_element.on("submit", function (event) {
     var formData = new FormData(form_element[0]);
     $.ajax({
       url: url,
       type: type,
       processData: false,
       contentType: false,
+      cache: false,
       data: formData,
       success: success,
-      beforeSend: beforeSend
+      beforeSend: beforeSend,
+      error: error
     });
-  });
+  });*/
 
 };
 

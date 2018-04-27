@@ -40,7 +40,7 @@ class Full_Article extends Article
          * Массив меток-заполнителей в html-шаблоне, которые будут заменены на результаты, полученные из базы данных
          * @var array
          */
-        $needle = array("[article_id]", "[cover_url]", "[title]", "[author]", "[year]", "[text]");
+        $needle = array("[article_id]", "[cover_url]", "[title]", "[author]", "[year]", "[text]", "[book_file]");
         /**
          * Если объект не пустой
          */
@@ -54,7 +54,7 @@ class Full_Article extends Article
              * Обновляющийся при каждом проходе цикла массив значений из базы данных, значения которого будут заменять
              * метки-заполнители (массив $needle) полученного файла html-шаблона
              */
-            $replace = array($db_object->id, $db_object->id, $db_object->title, $db_object->author, $db_object->year, $text);
+            $replace = array($db_object->id, $db_object->id, $db_object->title, $db_object->author, $db_object->year, $text, $db_object->book_file);
             //Заменить массив меток-заполнителей на массив значений базы данных в файле шаблона
             $this->template = str_replace($needle, $replace, $this->template);
         } else {

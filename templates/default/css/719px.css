@@ -1,4 +1,4 @@
-/*стиль до 700px*/
+/*стиль до 719px*/
 
 /*перемещение сайдбара вверх над основным блоком контента*/
 .sidebar{
@@ -33,4 +33,12 @@
 
 .preview img{
 		width: 100%;
+}
+
+h3.comment-header{
+		display: none;
+}
+
+p.comment-header{
+		display: block;
 }

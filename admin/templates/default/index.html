@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?=$title?></title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <!--<script src="../classes/js/App.js"></script>
-  <script src="../classes/js/widgets/Widget.js"></script>
-  <script src="../classes/js/widgets/notifications/Notification.js"></script>
-  <script src="../classes/js/widgets/notifications/CheckForm.js"></script>-->
   <script src="../js/plugins/jquery.validate.js"></script>
+  <script src="../js/plugins/jquery.toggleMenu.js"></script>
   <script src="../classes/js/classes.js"></script>
   <script src="../admin/js/main.js"></script>
   <link rel="stylesheet" href="templates/<?=$template?>/css/style.css"/>
@@ -18,15 +15,28 @@
 </head>
 <body>
 
+<noscript>
+  <h2 class="noscript">
+    Для корректного функционирования сайта включите javascript в настройках вашего браузера
+  </h2>
+</noscript>
+
 <!--ОБЕРТКА-->
 <div class="outer">
   <!--ШАПКА-->
   <div class="header">
+
     <div class="inner-header">
       <a class="left" href="../admin/">
         <img src="templates/<?=$template?>/res/logo.png" alt="Лого" title="На главную"/>
         <span class="small-logo">библиотека кодера</span>
       </a>
+
+      <div class="gamburger right">
+        <div class="hr"></div>
+        <div class="hr"></div>
+        <div class="hr"></div>
+      </div>
 
       <div class="header-block"></div>
       <div class="logo2">

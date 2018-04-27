@@ -1,6 +1,7 @@
 <?php
 echo $roo;
-require_once "required/required.php";
+//модуль вывода статей
+
 //создать объект класса работы с базой данных
 $connector = new DbConnector("localhost:3306", $login, $password, $db_name);
 if (mysqli_connect_errno()) {
@@ -9,7 +10,7 @@ if (mysqli_connect_errno()) {
 
 //если передан get-запрос с параметром "full_article" присвоить значение параметра переменной
 //в параметре get-запроса передается номер статьи; параметр переадется при нажатии кнопки "Подробнее"
-if ($_GET["full_article"]) $full_article = $_GET["full_article"];
+if ($_GET["full_article"] ) $full_article = $_GET["full_article"];
 
 //если не передан запрос с идентификаторам статьи - отобразить список всех статей
 if (!$full_article) {

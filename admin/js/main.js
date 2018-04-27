@@ -1,17 +1,39 @@
+//Основной js файл админ панели
 $(function () {
-  var form_notification = new APP.Widget.Notification.CheckForm({
-      color: "yellow",
-      fontSize: "larger",
-      boxShadow: "-5px 5px 10px gray",
-      duration: 1000,
-      borderRadius: "5px"
+
+  var btnMenu = $(".gamburger"),//элемент кнопки раскрывающегося меню
+    menu_block = $(".sidebar-block");//элемент раскрывающегося меню
+  btnMenu.toggleMenu({target: menu_block, speed: "fast"});/*установка плагина раскрывающегося меню на элемент кнопки меню*/
+
+  $(".menu-button").toggleMenu({target: menu_block});//установка плагина раскрывающегося меню на элемент кнопки меню
+
+  var form_notification = new APP.Widget.Notification.CheckForm({//Объект уведомления проверки формы
+      color: "yellow",//цвет текста уведомления
+      fontSize: "larger",//размер шрифта уведомления
+      boxShadow: "-5px 5px 10px gray",//тень
+      duration: 1000,//время проказа уведомления
+      borderRadius: "5px",//радиус скругления углов уведомления
+      left: "10px",
+      top: "10px"
     }),
 
-    add_content_form = $("form[name='add_content_form']");
+    add_content_form = $("form[name='add_content_form']"),//jquery объект формы добавления контента из файла add_content_form.html
+    //Объект загрузчика контента на сервер
+    form_data_loader = new APP.FormDataLoader({
+      url: "../admin/modules/add_content_form.php",//url, куда следует отправить данные формы
+      form_element: $("#add_content_form"),// jquery объект формы
+      success: function (content) {//функция, которая выполнится в результате удачного ответа сервера
+        form_notification.content(content);
+        form_notification.hide();
+      },
+      beforeSend: function () {//функция, которая выполнится перед отправкой данных на сервер
+        form_notification.show("Обработка данных...");
+      }
+    });
 
-  form_notification.append();
+  form_notification.append();//добавление уведомления в DOM
 
-  add_content_form.validate(
+  add_content_form.validate(//подключение к форме плагина валидации
     {
       book_title: {
         required: true,
@@ -78,19 +100,7 @@ $(function () {
         }
       }
 
-    }, function () {
-      var form_data_loader = new APP.FormDataLoader({
-        url: "../admin/modules/add_content_form.php",
-        form_element: $("#add_content_form"),
-        success: function (content) {
-          form_notification.content(content);
-          form_notification.hide();
-        },
-        beforeSend: function () {
-          form_notification.show("Обработка данных...");
-        }
-      });
-    }
+    }, form_data_loader.query
   );
 
 

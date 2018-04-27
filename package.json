@@ -9,6 +9,7 @@
   "author": "Alexander Timofeev",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.23.7",
     "gulp": "^3.9.1",
     "gulp-docco": "0.0.4"
   }

@@ -1,6 +1,7 @@
 <?php
-require_once("../classes/php/DbConnector.php");
-require_once("db_connect.php");
+//модуль, который отдает изображение скрипту
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/required files/required_files.php';//подключить файл включений
 $connector = new DbConnector($host, $login, $password, $db_name);
 if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";

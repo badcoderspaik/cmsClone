@@ -1,0 +1,59 @@
+<!--форма входа в админ панель-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?=$title?></title>
+  <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+  <!--<script src="<?=$url?>js/plugins/jquery.validate.js"></script>-->
+  <!--<script src="<?=$url?>classes/js/classes.js"></script>-->
+  <!--<script src="<?=$url?>admin/js/main.js"></script>-->
+  <link rel="stylesheet" href="<?=$url?>admin/templates/<?=$template?>/css/style.css"/>
+  <link href="<?=$url?>favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+</head>
+<body>
+
+<!--ОБЕРТКА-->
+<div class="outer">
+  <!--ШАПКА-->
+  <div class="header">
+    <div class="inner-header">
+      <a class="left" href="../admin/">
+        <img src="<?=$url?>templates/<?=$template?>/res/logo.png" alt="Лого" title="На главную"/>
+        <span class="small-logo">библиотека кодера</span>
+      </a>
+
+      <div class="header-block"></div>
+      <div class="logo2">
+        <img src="<?=$url?>templates/<?=$template?>/res/logo2.png" alt="Книги по программированию в высоком качестве"
+             title="Книги в электронном качестве"/>
+      </div>
+    </div>
+  </div>
+  <!--ШАПКА-->
+  <!--ВНУТРЕННЯЯ ОБЕРТКА-->
+  <div class="wrapper">
+    <form name="admin_login_form" action="" method="post">
+      <table class="post_form">
+        <tr>
+          <td>Login:</td>
+          <td><input type="text" name="admin_login"></td>
+        </tr>
+
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" name="admin_password"></td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" name="btn_admin_login" value="Войти"/></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+<!--ОБЕРТКА-->
+</body>
+</html>
