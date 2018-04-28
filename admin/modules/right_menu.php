@@ -4,7 +4,7 @@
  * модуль меню в админ панели
  */
 require_once $_SERVER['DOCUMENT_ROOT'] . '/required files/required_files.php';//подключить файл включений (внимание!!! - это очень важный файл, и он должен быть подключен глобально)
-$menu_connector = new DbConnector($host, $login, $password, $db_name);
+$menu_connector = new DbConnector($host, $login, $password, $db_name);//объект подключения и работы с базой данных
 if (mysqli_connect_errno()) {
     echo "Не удалось подключиться к базе данных";
 }

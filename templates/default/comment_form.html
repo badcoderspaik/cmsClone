@@ -1,7 +1,7 @@
 <h3 class="comment-header brown">Оставить комментарий</h3>
 <p class="comment-header brown">Оставить комментарий</p>
-<form name="comment_form">
-	<input type="hidden" name="comment_id" value="[article_id]">
+<form name="comment_form" method="post"action="/">
+	<input type="hidden" name="full_article" value="[article_id]">
   <table class="post_form">
 
 	<tr>
@@ -14,7 +14,7 @@
 	  <td><textarea name="comment" rows=10></textarea></td>
 	</tr>
 	<tr>
-      <td><input type="submit" name="btn_add_comment" value="Отправить"></td>
+      <td><input type="submit" name="btn_add" value="Отправить"></td>
     </tr>
   </table>
 </form>
