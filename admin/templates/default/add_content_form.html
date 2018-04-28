@@ -1,50 +1,110 @@
-<form enctype="multipart/form-data" name="add_content_form" method="post" action="?page=add_content" id="add_content_form">
+<div class="desk_add_content_form">
+  <form enctype="multipart/form-data" name="add_content_form" method="post" action="?page=add_content" id="add_content_form">
 
-  <table class="post_form">
+    <table class="post_form">
 
-    <tr>
-      <td>Название:</td>
-      <td><input type="text" name="book_title"></td>
-    </tr>
+      <tr>
+        <td>Название:</td>
+        <td><input type="text" name="book_title"></td>
+      </tr>
 
-    <tr>
-      <td>Автор:</td>
-      <td><input type="text" name="autor"></td>
-    </tr>
+      <tr>
+        <td>Автор:</td>
+        <td><input type="text" name="autor"></td>
+      </tr>
 
-    <tr>
-      <td>Год издания:</td>
-      <td><input type="text" name="year"></td>
-    </tr>
+      <tr>
+        <td>Год издания:</td>
+        <td><input type="text" name="year"></td>
+      </tr>
 
-    <tr>
-      <td>Описание:</td>
-      <td><textarea name="description"></textarea></td>
-    </tr>
+      <tr>
+        <td>Описание:</td>
+        <td><textarea name="description"></textarea></td>
+      </tr>
 
-    <tr>
-      <td>Выбрать категорию:</td>
-      <td>
+      <tr>
+        <td>Выбрать категорию:</td>
+        <td>
+          <select name="categories">
+            [while]
+            <option value="[category_id]">[item]</option>
+            [while]
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Загрузить обложку:<br><br><input type="file" name="cover"></td>
+      </tr>
+
+      <tr>
+        <td>Загрузить книгу:<br><br><input type="file" name="book_file"></td>
+      </tr>
+
+      <tr>
+        <td><input type="submit" name="btn_add" value="Запостить"></td>
+      </tr>
+
+    </table>
+
+  </form>
+</div>
+
+
+<div class="mob_add_content_form">
+
+  <form enctype="multipart/form-data" name="add_content_form" method="post" id="mob_add_content_form" action="?page=add_content">
+
+    <ul>
+
+      <li>
+        <label for="book_title">Название: </label><br/>
+        <span><input type="text" name="book_title"></span><br/>
+      </li>
+
+      <li>
+        <label for="autor">Автор: </label><br/>
+        <input type="text" name="autor"><br/>
+      </li>
+
+      <li>
+        <label for="year">Год издания: </label><br/>
+        <input type="text" name="year"><br/>
+      </li>
+
+      <li>
+        <label for="description">Описание: </label><br/>
+        <textarea name="description"></textarea><br/><br/>
+      </li>
+
+      <li>
+        <label for="categories">Выбрать категорию: </label><br/>
         <select name="categories">
           [while]
           <option value="[category_id]">[item]</option>
           [while]
-        </select>
-      </td>
-    </tr>
+        </select><br/>
+      </li>
 
-    <tr>
-      <td>Загрузить обложку:<br><br><input type="file" name="cover"></td>
-    </tr>
+      <li>
+        <label for="cover">Загрузить обложку: </label><br/><br/>
+        <input type="file" name="cover">
+      </li>
 
-    <tr>
-      <td>Загрузить книгу:<br><br><input type="file" name="book_file"></td>
-    </tr>
+      <li>
+        <label for="book_file">Загрузить файл: </label><br/><br/>
+        <input type="file" name="book_file">
+      </li>
 
-    <tr>
-      <td><input type="submit" name="btn_add" value="Запостить"></td>
-    </tr>
+      <li>
+        <input type="submit" name="btn_add" value="Запостить">
+      </li>
 
-  </table>
+    </ul>
 
-</form>
+  </form>
+
+</div>
+
+

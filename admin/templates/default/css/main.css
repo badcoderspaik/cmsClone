@@ -304,6 +304,11 @@ a.preview img:hover {
 /*width: 100%;*/
 /*}*/
 
+/*скрыть блок с формой добавления контента*/
+div.mob_add_content_form {
+		display: none;
+}
+
 /*БЛОК СТАТЬИ*/
 
 .widget {

@@ -26,3 +26,16 @@
 .sidebar-block, .sidebar-block-header{
 		display: none;
 }
+
+/*скрыть форму добавления контента с таблицей внутри*/
+div.desk_add_content_form{
+		display: none;
+}
+/*показать блок с формой добавления контента*/
+div.mob_add_content_form {
+		display: block;
+}
+
+div.mob_add_content_form ul li {
+		margin-bottom: 10px;
+}
