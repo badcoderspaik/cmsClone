@@ -37,7 +37,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/admin/templates/$template/admin_login
 
 if ($_POST['btn_admin_login']) {//если нажата кнопка отправки формы
     //если введенные в форму логин и пароль совпадают с логином и паролем из базы данных
-    if ($_POST['admin_login'] == $admin_login && $_POST['admin_password'] == $admin_password) {
+    if (trim($_POST['admin_login']) == $admin_login && trim($_POST['admin_password']) == $admin_password) {
         //создать сессионную переменную
         $_SESSION['admin_login'] = $admin_login;
         //и перенаправить пользователя на главную страницу админки

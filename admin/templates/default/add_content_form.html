@@ -1,5 +1,6 @@
 <div class="desk_add_content_form">
-  <form enctype="multipart/form-data" name="add_content_form" method="post" action="?page=add_content" id="add_content_form">
+  <form enctype="multipart/form-data" name="add_content_form" method="post" action="?page=add_content"
+        id="add_content_form">
 
     <table class="post_form">
 
@@ -54,32 +55,33 @@
 
 <div class="mob_add_content_form">
 
-  <form enctype="multipart/form-data" name="add_content_form" method="post" id="mob_add_content_form" action="?page=add_content">
+  <form enctype="multipart/form-data" name="add_content_form" method="post" id="mob_add_content_form"
+        action="?page=add_content">
 
     <ul>
 
       <li>
         <label for="book_title">Название: </label><br/>
-        <span><input type="text" name="book_title"></span><br/>
+        <input type="text" name="book_title" id="book_title"><br/>
       </li>
 
       <li>
         <label for="autor">Автор: </label><br/>
-        <input type="text" name="autor"><br/>
+        <input type="text" name="autor" id="autor"><br/>
       </li>
 
       <li>
         <label for="year">Год издания: </label><br/>
-        <input type="text" name="year"><br/>
+        <input type="text" name="year" id="year"><br/>
       </li>
 
       <li>
         <label for="description">Описание: </label><br/>
-        <textarea name="description"></textarea><br/><br/>
+        <textarea name="description" id="description"></textarea><br/><br/>
       </li>
 
       <li>
-        <label for="categories">Выбрать категорию: </label><br/>
+        <label for="categories" id="categories">Выбрать категорию: </label><br/>
         <select name="categories">
           [while]
           <option value="[category_id]">[item]</option>
@@ -89,12 +91,12 @@
 
       <li>
         <label for="cover">Загрузить обложку: </label><br/><br/>
-        <input type="file" name="cover">
+        <input type="file" name="cover" id="cover">
       </li>
 
       <li>
         <label for="book_file">Загрузить файл: </label><br/><br/>
-        <input type="file" name="book_file">
+        <input type="file" name="book_file" id="book_file">
       </li>
 
       <li>

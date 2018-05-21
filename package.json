@@ -11,6 +11,7 @@
   "devDependencies": {
     "browser-sync": "^2.23.7",
     "gulp": "^3.9.1",
-    "gulp-docco": "0.0.4"
+    "gulp-docco": "0.0.4",
+    "gulp-uncomment": "^0.3.0"
   }
 }

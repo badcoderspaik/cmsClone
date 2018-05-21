@@ -4,13 +4,13 @@
 /*Главный файл*/
 $(function () {
 
-  var btnMenu = $(".gamburger"),//элемент кнопки раскрывающегося меню
-    menu_block = $(".sidebar-block");//элемент раскрывающегося меню
+  var btnMenu = $(".mob-menu-button"),//элемент кнопки раскрывающегося меню
+    menu_block = $(".menubar__item-block");//элемент раскрывающегося меню
   btnMenu.toggleMenu({target: menu_block, speed: "fast"});/*установка плагина раскрывающегося меню на элемент кнопки меню*/
 
-  $(".menu-button").toggleMenu({target: menu_block});//установка плагина раскрывающегося меню на элемент кнопки меню
+  $(".menubar__button").toggleMenu({target: menu_block});//установка плагина раскрывающегося меню на элемент кнопки меню
 
-  var comment_form = $("form[name='comment_form']"),//форма комментариев к постам из comment_form.html
+  /*var comment_form = $("form[name='comment_form']"),//форма комментариев к постам из comment_form.html
     form_notification = new APP.Widget.Notification.CheckForm({//объект уведомления проверки формы
       color: "yellow",//цвет текста
       fontSize: "larger",//размер шрифта
@@ -54,6 +54,6 @@ $(function () {
         maxLength: 200,
       }
     }, form_data_loader.query
-  );
+  );*/
 
 });

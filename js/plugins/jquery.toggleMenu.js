@@ -19,9 +19,8 @@
      * что предотвратит исчезновение элемента меню при возвращении экрана к исходному размеру
      * */
     return this.on("click", function () {
-      options.target.slideToggle(options.speed);
-      viewport.resize(function () {
-        if (width > options.maxW && options.target.is(":hidden")) options.target.removeAttr("style");
+      options.target.slideToggle(options.speed, function () {
+        if($(this).css('display') === 'none') $(this).removeAttr('style');
       });
     });
   }

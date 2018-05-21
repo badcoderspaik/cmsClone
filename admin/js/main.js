@@ -17,8 +17,8 @@ $(function () {
       top: "10px"
     }),
 
-    add_content_form = $("#add_content_form"),//jquery объект формы добавления контента из файла add_content_form.html
-    mob_add_content_form = $("#mob_add_content_form"),
+    add_content_form = $("#add_content_form"),//jquery объект формы (desktop вариант) добавления контента из файла add_content_form.html
+    mob_add_content_form = $("#mob_add_content_form"),//jquery объект формы (mobile вариант) добавления контента из файла add_content_form.html
     //Объект загрузчика контента на сервер
     form_data_loader = new APP.FormDataLoader({
       url: "../admin/modules/add_content_form.php",//url, куда следует отправить данные формы
