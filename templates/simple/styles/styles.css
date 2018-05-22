@@ -1,0 +1,6 @@
+@import url(reset.css); /*сброс стилей*/
+@import url(main.css); /*главный стиль*/
+@import "850px.css" (max-width: 850px);
+@import url(719px.css) (max-width: 719px);
+@import url(600px.css) (max-width: 600px);
+@import url(480px.css) (max-width: 480px);

@@ -1,0 +1,35 @@
+.header {
+  padding: 0;
+}
+.header__mobile {
+  /*показать мобильную шапку*/
+  display: block;
+}
+.header__link-logo {
+  /*скрыть лого*/
+  display: none;
+}
+.header__img-logo {
+  /*скрыть лого*/
+  display: none;
+}
+.header__gradient-block {
+  /*скрыть градиентный блок*/
+  display: none;
+}
+.header__description-block {
+  /*скрыть блок описания*/
+  display: none;
+}
+.menubar__button {
+  /*скрыть кнопку меню*/
+  display: none;
+}
+.book {
+  text-align: center;
+}
+.book__link {
+  float: none;
+}
+
+/*# sourceMappingURL=480px.css.map */

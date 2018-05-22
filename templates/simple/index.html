@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:700i&amp;subset=cyrillic" rel="stylesheet"/>
+    <link rel="stylesheet" href="templates/<?=$template?>/styles/styles.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <title>Библиотека программиста</title>
+</head>
+<body>
+<!--block wrapper-->
+<div class="wrapper">
+    <!--header-->
+    <div class="header">
+        <a class="header__link-logo" href="/">
+            <img src="templates/<?=$template?>/res/logo.png" class="header__img-logo" alt="Библиотека кодера">
+        </a>
+
+        <div class="header__gradient-block"></div>
+
+        <div class="header__description-block">
+            <img class="header__img-description" src="templates/<?=$template?>/res/logo2.png" alt="Книги пр программированию в высоком качестве">
+        </div>
+
+        <div class="header__mobile">
+            <div class="header__mob-menu-button mob-menu-button">
+                <div class="mob-menu-button__hr"></div>
+                <div class="mob-menu-button__hr"></div>
+                <div class="mob-menu-button__hr"></div>
+            </div>
+            <a href="/" class="header__mobile-title">библиотека кодера</a>
+        </div>
+    </div>
+    <!--header-->
+
+    <!--main content wrapper-->
+    <div class="main">
+        <!--menu-->
+        <?=$menu?>
+        <!--menu-->
+
+        <!--content block-->
+        <div class="content">
+            <!--article block-->
+            <?=$content?>
+            <!--article block-->
+        </div>
+        <!--content block-->
+
+    </div>
+    <!--main content wrapper-->
+
+    <!--footer-->
+    <div class="footer">
+
+    </div>
+    <!--footer-->
+</div>
+<!--block wrapper-->
+</body>
+</html>

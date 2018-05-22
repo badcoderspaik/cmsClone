@@ -1,0 +1,13 @@
+.header__description-block {
+  /*скрыть блок описания в шапке*/
+  display: none;
+  transition: all 1s;
+}
+.header__gradient-block {
+  /*увеличить градиентный блок в шапке*/
+  height: 100px;
+  margin-top: 7px;
+  transition: all 1s;
+}
+
+/*# sourceMappingURL=600px.css.map */

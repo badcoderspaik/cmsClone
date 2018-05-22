@@ -1,0 +1,26 @@
+{
+  "name": "webdev",
+  "authors": [
+    "Charli Santiago <badcoderspaik@gmail.com>"
+  ],
+  "description": "web development",
+  "main": "bower.json",
+  "keywords": [
+    "none"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "jquery-ui": "jqueryui#^1.12.1",
+    "lightbox2": "https://github.com/lokesh/lightbox2.git#^2.10.0",
+    "reset.css": "https://github.com/KimSunWook/reset.css.git#^1.1.3"
+  }
+}

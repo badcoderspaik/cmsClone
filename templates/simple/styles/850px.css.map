@@ -1,0 +1,1 @@
+{"version":3,"sources":["850px.less"],"names":[],"mappings":"AACE,KAAC;EACC,UAAA","sourcesContent":[".book {\r\n  &__link {\r\n    width: 30%;\r\n  }\r\n}"],"file":"850px.css"}

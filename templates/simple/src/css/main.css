@@ -1,0 +1,221 @@
+@font-face {
+  font-family: lora;
+  src: url("../../res/fonts/lora.ttf");
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #c6f3dc, white);
+}
+/*Обложка*/
+.wrapper {
+  background-repeat: no-repeat;
+  max-width: 1349px;
+  min-width: 450px;
+  margin: auto;
+  overflow: hidden;
+  height: inherit;
+  background-image: linear-gradient(to bottom, #c6f3dc, white);
+}
+/*Обложка*/
+/*шапка*/
+.header {
+  padding: 10px 0;
+  overflow: hidden;
+  width: 96%;
+  margin: auto;
+}
+.header__link-logo {
+  float: left;
+}
+.header__gradient-block {
+  background-color: #2f73ed;
+  background-image: linear-gradient(to right, #2f73ed, #96BCFF);
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 170px;
+  width: 86%;
+}
+.header__description-block {
+  margin-left: 170px;
+  margin-top: 5px;
+}
+.header__img-description {
+  max-width: 100%;
+}
+.header__mobile {
+  margin: auto;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #2f73ed;
+  background-image: linear-gradient(to right, #2f73ed, #96BCFF);
+  display: none;
+  margin-top: 0;
+}
+.header__mob-menu-button {
+  float: right;
+}
+.header__mobile-title {
+  color: #fff;
+  text-shadow: -5px 5px 2px #000;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 2.5rem;
+}
+.mob-menu-button {
+  width: 20%;
+  max-width: 55px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 4px;
+}
+.mob-menu-button__hr {
+  height: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+.mob-menu-button__hr:last-child {
+  margin-bottom: 0;
+}
+/*шапка*/
+/*обертка для блоков контента и сайдбара*/
+.main {
+  width: 96%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+/*обертка для блоков контента и сайдбара*/
+.content {
+  margin-right: 26%;
+  border: 1px solid #9C9C9C;
+  border-radius: 5px;
+  padding: 5px;
+}
+.book {
+  border: 1px solid #9C9C9C;
+  border-radius: 5px;
+  padding: 5px;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.book__link {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.book__img {
+  border: 2px solid #9C9C9C;
+  max-width: 100%;
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -ms-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.book__img:hover {
+  border-color: #000;
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+}
+.book__name {
+  font-size: 100%;
+}
+.book-description__name {
+  color: #2267ff;
+}
+.book-description__value {
+  color: #D0910B;
+}
+.book__content {
+  text-align: justify;
+  font-family: lora, san-serif;
+  line-height: 1.4;
+}
+.book__button {
+  background-color: #2f73ed;
+  background-image: linear-gradient(to top, #2f73ed, #96BCFF);
+  color: white;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 5px;
+  float: right;
+}
+.book__button:hover {
+  background-image: linear-gradient(to bottom, #2f73ed, #96BCFF);
+}
+.book__button_margin {
+  margin-right: 6px;
+}
+/*блок менюбара*/
+.menubar {
+  float: right;
+  width: 25%;
+}
+.menubar__title {
+  /*заголовок менюбара*/
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #9C9C9C;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  font-size: 20px;
+  background-color: #2f73ed;
+  background-image: linear-gradient(to top, #2f73ed, #96BCFF);
+  color: white;
+}
+.menubar__item-block {
+  border: 1px solid #9C9C9C;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+}
+.menubar__items {
+  background-color: #66a1fb;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+.menubar__items:hover {
+  transform: translateX(5px);
+}
+.menubar__link {
+  display: block;
+  padding: 8px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+.menubar__link:hover {
+  color: white;
+}
+.menubar__button {
+  display: none;
+  text-align: center;
+  background-color: #2f73ed;
+  background-image: linear-gradient(to top, #2f73ed, #96BCFF);
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+/*блок менюбара*/
+/*футер*/
+.footer {
+  padding: 30px;
+  background: #d0daed;
+  text-align: justify;
+  clear: both;
+}
+/*футер*/
+
+/*# sourceMappingURL=main.css.map */

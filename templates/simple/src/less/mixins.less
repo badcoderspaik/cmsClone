@@ -1,0 +1,27 @@
+.debug-height(@height:1000px) {//устанавливает высоту блока
+  height: @height;
+}
+
+.debug-outline(@width: 1px) {//устанавливает рамку вокруг блока ( 1arg )
+  outline: @width solid red;
+}
+
+.debug-outline(@width:1px, @style:solid, @color:red) {//устанавливает рамку вокруг блока( 3args )
+  outline: @width @style @color;
+}
+
+.debug-border() {
+  border: 1px dashed red;
+}
+
+.float(@position) {//устанавливает float для элемента
+  float: @position;
+}
+
+.mw(@width) {//устанавливает максимальную ширину элемента в процентах
+  max-width: @width;
+}
+
+.color(@color) {
+  color: @color;
+}

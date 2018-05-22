@@ -1,0 +1,22 @@
+.menubar { /*перемещение меню вверх над основным блоком контента*/
+  float: none;
+  width: 100%;
+  margin-bottom: 10px;
+
+  &__item-block { /*убрать верхнюю рамку у списка*/
+    display: none;
+    border-top-style: none;
+  }
+
+  &__title { /*скрыть заголовок меню*/
+    display: none;
+  }
+
+  &__button { /*показать кнопку меню*/
+    display: block;
+  }
+}
+
+.content { /*убрать правый отступ*/
+  margin-right: 0;
+}
