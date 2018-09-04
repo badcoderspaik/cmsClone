@@ -13,7 +13,7 @@ if ($_POST['categories']) $categories = $_POST['categories'];//name="categories"
 if ($_POST['btn_add']) $btn_add = $_POST['btn_add'];//name="btn_add" из add_content_form.html
 
 //массив $_FILES содержит информацию о загружаемом файле
-//если в массиве $_FILES содержится элемент 'book_title' (то-есть файл загружен на сервер) - создать объект
+//если в массиве $_FILES содержится элемент 'book_file' (то-есть файл загружен на сервер) - создать объект
 //класса FileLoader
 if ($_FILES['book_file']) $book_loader = new FileLoader('book_file');
 
